@@ -1,0 +1,3 @@
+#!/bin/sh
+
+repo-add xerox.db.tar.gz *.pkg.tar.zst
