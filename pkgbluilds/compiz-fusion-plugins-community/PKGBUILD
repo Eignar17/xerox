@@ -15,10 +15,11 @@ pkgdesc="Compiz community plugins"
 arch=('i686' 'x86_64')
 url="https://github.com/compiz-community/${_upstream}/"
 license=('GPL')
-depends=("compiz-core>=${pkgver}" 'compiz-bcop' 'compiz-fusion-plugins-extra' 'libnotify')
-makedepends=('intltool' 'pkg-config' 'gettext')
-groups=('compiz-fusion')
-conflicts=('compiz-fusion-plugins-experimental-git')
+depends=('compiz-core-git' 'compiz-bcop-git' 'compiz-fusion-plugins-extra-git' 'libnotify')
+makedepends=('intltool' 'pkg-config')
+groups=('compiz-fusion' 'compiz-fusion-gtk' 'compiz-fusion-kde')
+conflicts=('compiz-fusion-plugins-experimental')
+provides=('compiz-fusion-plugins-experimental')
 options=('!libtool')
 source=("${url}releases/download/v${pkgver}/${_upstream}-${pkgver}.tar.gz")
 
