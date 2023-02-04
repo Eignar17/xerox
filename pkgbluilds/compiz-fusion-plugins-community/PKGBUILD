@@ -1,0 +1,39 @@
+# $Id$
+# Maintainer: martadinata666 <martadinata666@gmail.com>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: JJDaNiMoTh <jjdanimoth@gmail.com>
+# Contributor: nesl247 <nesl247@gmail.com>
+
+_upstream="compiz-plugins-community"
+_pkgver=0.8.18
+_micro=""
+
+pkgname=compiz-fusion-plugins-community
+pkgver="${_pkgver}${_micro}"
+pkgrel=1
+pkgdesc="Compiz community plugins"
+arch=('i686' 'x86_64')
+url="https://github.com/compiz-community/${_upstream}/"
+license=('GPL')
+depends=('compiz-core-git' 'compiz-bcop-git' 'compiz-fusion-plugins-extra-git' 'libnotify')
+makedepends=('intltool' 'pkg-config')
+groups=('compiz-fusion' 'compiz-fusion-gtk' 'compiz-fusion-kde')
+conflicts=('compiz-fusion-plugins-experimental')
+provides=('compiz-fusion-plugins-experimental')
+options=('!libtool')
+source=("${url}releases/download/v${pkgver}/${_upstream}-${pkgver}.tar.gz")
+
+build() {
+  cd "${srcdir}/${_upstream}-${pkgver}"
+  NOCONFIGURE=1 ./autogen.sh
+  ./configure --prefix=/usr
+
+  make
+}
+
+package() {
+  cd "${srcdir}/${_upstream}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+}
+
+sha256sums=('c562a2e0fd3859412f2ea6a0a2fb59fa29886a1974cff90b7353db26e7b2b280')

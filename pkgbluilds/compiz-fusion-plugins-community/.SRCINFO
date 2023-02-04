@@ -1,0 +1,23 @@
+pkgbase = compiz-fusion-plugins-community
+	pkgdesc = Compiz  plugins
+	pkgver = 0.8.18
+	pkgrel = 1
+	url = https://github.com/compiz-community/compiz-plugins-community/
+	arch = i686
+	arch = x86_64
+	groups = compiz-fusion
+	license = GPL
+	makedepends = intltool
+	makedepends = pkg-config
+	makedepends = gettext
+	depends = compiz-core>=0.8.18
+	depends = compiz-bcop
+	depends = compiz-fusion-plugins-extra
+	depends = libnotify
+	conflicts = compiz-fusion-plugins-experimental-git
+	options = !libtool
+	source = https://github.com/compiz-community/compiz-plugins-community/releases/download/v0.8.18/compiz-plugins-community-0.8.18.tar.gz
+	sha256sums = c562a2e0fd3859412f2ea6a0a2fb59fa29886a1974cff90b7353db26e7b2b280
+
+pkgname = compiz-fusion-plugins-community
+
